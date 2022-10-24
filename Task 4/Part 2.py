@@ -9,6 +9,7 @@ while True:
     # Проверка вхождения значения в словарь
     elif value not in my_dictionary.values():
         key += 1
+        # Добавление в словарь пары ключ - значение
         my_dictionary.update({key: value})
 # Переменная с доступом всех значений словаря
 m = my_dictionary.values()
