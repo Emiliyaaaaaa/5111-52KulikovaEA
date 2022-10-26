@@ -4,17 +4,13 @@ my_dictionary = {}
 my_list = []
 key = input("Введите слово ")
 while key != "":
-    value = 0
-    # Добавление введенного слова в список
-    my_list.append(key)
-    for key in my_list:
-        # Если слово повторяется, то значение увеличивается на один
-        if key == key in my_list:
-            value += 1
-        else:
-            value = 1
-    # Добавление в словарь пары ключ - значение
-    my_dictionary.update({key: value})
+    value_by_key = my_dictionary.get(key)
+    # Если слово не найдено в словаре
+    if not value_by_key:
+        my_dictionary.update({key: 1})
+    else:
+        # Если найдено, то количество повторений увеличиваем на 1
+        my_dictionary.update({key: value_by_key + 1})
     key = input("Введите слово ")
 print(my_dictionary)
 # Переменная с доступом всех ключей словаря
