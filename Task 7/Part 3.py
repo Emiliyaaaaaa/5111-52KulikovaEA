@@ -3,7 +3,7 @@ import re
 
 # Функция возвращения дубликатов в тексте
 def get_duplicates(text, word):
-    return re.findall(f"{word} {word}", text)
+    return re.findall(f"{word} {word}", text, flags=re.IGNORECASE)
 
 
 # Функция возвращения нового текста без дубликатов
@@ -15,7 +15,7 @@ def remove_dublicates(text):
         # Пока в тексте содержатся дубликаты
         while get_duplicates(text, word):
             # Замена дубликатов на одно слово - текст без повторов
-            text = re.sub(f"{word} {word}", word, text)
+            text = re.sub(f"{word} {word}", word, text, flags=re.IGNORECASE)
     return text
 
 
