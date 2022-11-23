@@ -1,10 +1,10 @@
 import json
-
 name_file = input("Введите имя файла ")
 f = open(name_file)
+a = f.read
 dictt = {}
 # Для каждой строки в списке
-for i in f.split(sep="\n"):
+for i in a.split(sep="\n"):
     # Подсчёт значений ключа (повтора слова в строке)
     for j in i.split():
         dictt[j] = dictt.get(j, 0) + 1
